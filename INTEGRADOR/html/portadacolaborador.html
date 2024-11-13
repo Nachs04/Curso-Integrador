@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/portada-colaborador.css">
+    <script src="../js/index.js"></script>
+    <title>Login - Colaborador</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <form action="../php/login_admi.php" method="post">
+                <h2>Panadería Doña Julia</h2><br>
+
+                <div class="usuario">
+                    <p>Código de Colaborador:</p>
+                    <input type="text" name="cod_usuario" placeholder="Código" required>
+                </div>
+
+                <div class="contrasena">
+                    <p>Contraseña:</p>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <!-- Enlace para recuperar contraseña -->
+                <div class="recordar">
+                    <a href="../html/recuperar-contrasena.html">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <input type="submit" value="Ingresar" name="Ingresar">
+
+                <div class="atras">
+                    <a href="../html/index.html">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

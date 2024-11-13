@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/portada-colaborador.css">
+    <title>Login - Panadería Doña Julia</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <form action="http://localhost/INTEGRADOR/php/login.php" method="POST">
+                <h2>Panadería Doña Julia</h2>
+                
+                <!-- Contenedor para mostrar mensajes de error -->
+                <div id="error-message" style="color: red; display: none;">
+                    <!-- Este mensaje se mostrará si hay un error -->
+                    Usuario o contraseña incorrectos.
+                </div>
+
+                <div class="usuario">
+                    <p>Correo de cliente:</p>
+                    <input type="email" name="cod_usuario" placeholder="Correo" required>
+                </div>
+
+                <div class="contrasena">
+                    <p>Contraseña:</p>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <input type="submit" value="Ingresar" name="Ingresar">
+
+                <div class="links">
+                    <a class="recordar" href="../html/recuperar-contrasena.html">¿Olvidaste tu contraseña?</a>
+                    <a class="atras" href="../html/registro-cliente.html">Regístrate</a><br>
+                    <a class="atras" href="../html/index.html">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

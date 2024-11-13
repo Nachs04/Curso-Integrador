@@ -1,0 +1,56 @@
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.card {
+    width: 100%;
+    padding: 20px;
+    height: 150px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.productos {
+    background-color: #98FB98;
+}
+
+.compras {
+    background-color: #FF6347;
+}
+
+.clientes {
+    background-color: #FAFAD2;
+}
+
+.ventas {
+    background-color: #87CEEB;
+}
+
+.icon {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.cantidad {
+    font-size: 1.5em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+

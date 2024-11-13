@@ -1,0 +1,84 @@
+/* Estilo para el formulario con animación */
+.login-section form {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+    max-width: 400px;
+    margin: auto;
+    animation: fadeIn 1s ease-in-out, slideUp 1s ease-in-out; /* Aplicando animaciones */
+}
+
+.login-section h2 {
+    font-size: 28px;
+    color: #856945; /* Combina con el color de los botones */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-section input[type="text"],
+.login-section input[type="password"],
+.login-section input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #856945; /* Borde del mismo color que los botones */
+    border-radius: 5px;
+    background-color: #f7f3e9; /* Fondo claro que combina con la página */
+    color: #333; /* Texto oscuro para buena legibilidad */
+    font-size: 16px;
+}
+
+.login-section input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #856945;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-section input[type="submit"]:hover {
+    background-color: #6f5433; /* Color más oscuro al pasar el mouse */
+}
+
+.login-section .links {
+    margin-top: 10px;
+}
+
+.login-section .links a {
+    display: block; /* Hacer que los enlaces sean bloques para alinearlos verticalmente */
+    color: #856945;
+    text-decoration: none;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    margin-bottom: 10px; /* Espacio entre los enlaces */
+}
+
+.login-section .links a:hover {
+    text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

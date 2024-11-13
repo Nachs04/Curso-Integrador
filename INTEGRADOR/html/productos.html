@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Cproducto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../js/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customar-support">
+                        <span class="text">Soporte al cliente</span><br>
+                        <span class="number">979-486-180</span>
+                    </div>
+                </div>
+                <div class="container-logo">
+                    <img src="../recursos/imagenes/LOGO.png" alt="Logo">
+                    <h1 class="logo"><a href="index.html">PASTELERIA DOÑA JULIA</a></h1>
+                </div>
+                <div class="container-user">
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                    <div class="content-shopping-cart">
+                        <span class="text">Carrito</span>
+                        <span class="number">(0)</span>
+                    </div>
+                    <!-- Cuadro del carrito -->
+                    <!-- Dentro de <div class="container-user"> -->
+                        <div class="cart-dropdown" style="display: none;">
+                            <div class="header-carrito">
+                                <h2>Tu Carrito</h2>
+                            </div>
+                        
+                            <div class="carrito-items">
+                                                <!-- 
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/choco.webp" width="80px" alt="Torta de chocolate">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Torta de chocolate</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/leche.webp" width="80px" alt="Torta tres leches">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Torta de Tres leches</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/fresa.png" width="80px" alt="Soufflé de fresas">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Soufflé de fresas</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/selva.webp" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Torta de selva negra</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/chocolate.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Chocolate Lover 02</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/tortaajedrez-324x324.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Torta de Ajedrez</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/02.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Strawberry Antoinette 02</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/04.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Strawberry Antoinette 04</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/rosa.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Mariposa Junior Rosa</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/rosetas.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Rosetas</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/maca.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Stand de macarons-Arcoiris</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>
+                                <div class="carrito-item">
+                                    <img src="../recursos/imagenes/Dulcefina-13.jpg" width="80px" alt="Torta selva negra">
+                                    <div class="carrito-item-detalles">
+                                        <span class="carrito-item-titulo">Strawberry Antoinette</span>
+                                        <div class="selector-cantidad">
+                                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                                        </div>
+                                        <span class="carrito-item-precio">$4.60</span>
+                                    </div>
+                                    <span class="btn-eliminar">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </span>
+                                </div>                        -->
+                            </div>
+                            <div class="carrito-total">
+                                <div class="fila">
+                                    <strong>Tu Total</strong>
+                                    <span class="carrito-precio-total">
+                                        $41.40 <!-- Esto es 4.60 * 9 productos -->
+                                    </span>
+                                </div>
+                                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i></button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+        <nav class="navbar container">
+            <i class="fa-solid fa-bars"></i>
+            <ul class="menu">
+                <li><a href="cliente.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <form class="search-form">
+                <input type="search" placeholder="Buscar">
+                <button class="btn-search">
+                    <i class="fa-brands fa-searchengin"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
+    </header>
+<section class="banner">
+    <div style="position: relative; width: 100%; height: 0; padding-top: 20%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: -1em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 0px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGPfvUEFWc&#x2F;_urnx8akc8d8MPsX2oa6TQ&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+    </section>
+    <br>
+<main class="main-content">
+    <section class="container top-products">
+        <br>
+        <div class="container-options">
+            <span class="active">Postres</span>
+            <span onclick="funcion()">Accesorios</span>
+        </div>
+        <div class="container-products">
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/choco.webp" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Torta de chocolate</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart" data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/leche.webp" alt="Torta tres leches">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h3>Torta de Tres leches</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/fresa.png" alt="Soufflé de fresas">
+                    <span class="discount">80%</span>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h3>Soufflé de fresas</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/selva.webp" alt="Torta selva negra">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h3>Torta de selva negra</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/chocolate.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Chocolate Lover 02</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/02.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Strawberry Antoinette 02</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/04.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Strawberry Antoinette 04</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/rosa.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Mariposa Junior Rosa</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/rosetas.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Rosetas</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/maca.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Stand de macarons-Arcoiris</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/Dulcefina-13.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Strawberry Antoinette</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="../recursos/imagenes/tortaajedrez-324x324.jpg" alt="Torta de chocolate">
+                    <span class="discount">80%</span>
+                    <div class="button-group">
+                    <span>
+                        <i class="fa-regular fa-eye"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                    </span> 
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Torta de Ajedrez</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping add-to-cart"  data-product-id="1"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="container-logo">
+                    <img src="../recursos/imagenes/LOGO.png">
+                    <h1 class="logo"><a href="index.html">PASTELERIA DOÑA JULIA</a></h1>
+                </div>
+                <div class="contact-info">
+                    <p class="title-footer">Informacion de contacto</p>
+                    <ul>
+                        <li>Dirección: Av.Arequipa-Lima Centro, Perú</li>
+                        <li>Telefono: 979-486-180</li>
+                        <li>Correo electronico: xxxxxxxxxxx@gmail.com</li>
+                    </ul>
+                    <div class="social-icons">
+                        <span class="facebook"><i class="fa-brands fa-facebook"></i></span>
+                        <span class="instagram"><i class="fa-brands fa-instagram"></i></span>
+                        <span class="twitter"><i class="fa-brands fa-x-twitter"></i></span>
+                        <span class="youtube"><i class="fa-brands fa-youtube"></i></span>
+                        <span class="tiktok"><i class="fa-brands fa-tiktok"></i></span>
+                    </div>
+                </div>
+                <div class="information">
+                    <p class="title-footer">Información</p>
+                        <ul>
+                            <li><a href="#"></a>Acerca de nosotros</li>
+                            <li><a href="#"></a>Informacion</li>
+                            <li><a href="#"></a>Politicas de privacidad</li>
+                            <li><a href="#"></a>Terminos y condiciones</li>
+                            <li><a href="#"></a>Contactanos </li>
+                        </ul>
+                </div>
+                <div class="newletter">
+                    <p class="title-footer">NUESTRAS PROMOCIONES</p>
+                    <div class="content">
+                        <p>
+                            Enterate a nuestros proximas promociones donde te mantendremos al 
+                            día con todas nuestras ofertas exclusivas.
+                        </p>
+                        <input type="email" placeholder="Ingresa tu correo aqui mano...">
+                        <button>INGRESA</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>
+                    Nicolas Chumpitaz Yael Ramos Jhair Dedios &copy; 2024
+                </p>
+                <img src="../recursos/imagenes/payment.png" alt="">
+            </div>
+        </div>
+    </footer>
+</main>
+<div class="whatsapp-container">
+    <div class="whatsapp-button">
+        <a href="https://wa.me/1234567890" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+</body>
+</html>

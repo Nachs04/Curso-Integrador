@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/portada-colaborador.css">
+    <script src="../js/index.js" defer></script>
+    <title>Registro - Panadería Doña Julia</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <form action="http://localhost/INTEGRADOR/php/registrar.php"  id="registroForm" method="post">
+                <h2>Panadería Doña Julia</h2>
+                <div class="usuario">
+                    <p>Correo de cliente:</p>
+                    <input type="email" name="cod_usuario" placeholder="Correo" required>
+                </div>
+
+                <div class="usuario">
+                    <p>Nombre:</p>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="contrasena">
+                    <p>Contraseña:</p>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <input type="submit" value="Registrar" name="Ingresar">
+
+                <div class="links">
+                    <a class="atras" href="../html/login-cliente.html">Regresar</a>
+                </div>
+            </form>
+            <div id="response"></div> <!-- Div para mostrar la respuesta -->
+        </div>
+    </div>
+
+</body>
+</html>
