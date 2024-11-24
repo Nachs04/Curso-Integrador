@@ -4,10 +4,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Datos de conexión a la base de datos
-$servername = "localhost"; // Cambia según tu servidor de base de datos
-$username = "root";  // Cambia a tu usuario de base de datos
-$password = "G@bo1007"; // Cambia a tu contraseña de base de datos
-$dbname = "marcosweb"; // Cambia al nombre de tu base de datos
+$servername = "localhost";
+$username = "root";
+$password = "admin";
+$dbname = "integrador";
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,14 +18,17 @@ if ($conn->connect_error) {
 }
 
 // Obtener los datos enviados desde el formulario
-$cod_usuario = $_POST['cod_usuario'];  // 'cod_usuario' corresponde al campo en el formulario
-$contrasena = $_POST['contraseña'];
+$cod_usuario = $_POST['cod_usuario']; // Campo del formulario
+$contrasena = $_POST['contraseña'];  // Campo del formulario
 
-// Consulta para verificar el usuario y la contraseña
-$sql = "SELECT * FROM colaborador WHERE id = '$cod_usuario' AND contraseña = '$contrasena'";
-$result = $conn->query($sql);
+// Consulta segura con sentencias preparadas
+$sql = "SELECT * FROM colaborador WHERE cod_colaborador = ? AND contraseña = ? AND estado = 1";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("is", $cod_usuario, $contrasena); // "i" para entero, "s" para string
+$stmt->execute();
+$result = $stmt->get_result();
 
-// Verificar si el colaborador existe y la contraseña es correcta
+// Verificar si el colaborador existe, la contraseña es correcta y el estado es activo
 if ($result->num_rows > 0) {
     // Redirigir a la página de administrador si las credenciales son correctas
     header("Location: ../html/administrador.html");
@@ -36,6 +39,7 @@ if ($result->num_rows > 0) {
     exit();
 }
 
-// Cerrar la conexión
+// Cerrar la conexión y la declaración preparada
+$stmt->close();
 $conn->close();
 ?>
