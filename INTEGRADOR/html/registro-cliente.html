@@ -38,5 +38,37 @@
         </div>
     </div>
 
+
+    <script>
+        document.querySelector('#login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.querySelector('#email').value;
+            const password = document.querySelector('#password').value;
+
+            try {
+                const response = await fetch('http://localhost/INTEGRADOR/php/login.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Guardar el correo en sessionStorage (o localStorage si prefieres)
+                    sessionStorage.setItem('userEmail', data.email); // Guarda el correo en sessionStorage
+                    alert('Inicio de sesión exitoso');
+                    window.location.href = '../html/home.html'; // Redirige al home
+                } else {
+                    alert('Error de inicio de sesión: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un problema al iniciar sesión.');
+            }
+        });
+    </script>
+
 </body>
 </html>

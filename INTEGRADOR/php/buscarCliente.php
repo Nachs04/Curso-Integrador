@@ -1,40 +1,46 @@
 <?php
-// Establecer la conexión con la base de datos
-$servername = "localhost";
-$username = "root";  // Cambia esto según tus credenciales
-$password = "G@bo1007";      // Cambia esto según tus credenciales
-$dbname = "marcosweb"; // Cambia esto por tu base de datos
+// Conexion a la base de datos
+$host = "localhost";
+$user = "root";
+$password = "G@bo1007";
+$db = "marcosweb";
 
-// Crea la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Conexión a la base de datos
+$conexion = new mysqli($host, $user, $password, $db);
 
-// Verifica la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+
+if(isset($_GET['search'])) {
+    $searchQuery = $_GET['search'];
+} else {
+    echo json_encode([]); // Si no hay término de búsqueda, devolver un array vacío
+    exit;
 }
 
-// Obtén los datos del cuerpo de la solicitud
-$data = json_decode(file_get_contents("php://input"), true);
-$nombre = $data['nombre'];
+// Asegúrate de que la variable de búsqueda esté limpia
+$searchQuery = trim($searchQuery);
 
-// Consulta para buscar los clientes por nombre o correo
-$sql = "SELECT correo, nombre_cli, contraseña, fecha FROM cliente WHERE nombre_cli LIKE ? OR correo LIKE ?";
-$stmt = $conn->prepare($sql);
-$searchTerm = "%" . $nombre . "%";
-$stmt->bind_param("ss", $searchTerm, $searchTerm);
+if(empty($searchQuery)) {
+    echo json_encode([]); // Si la búsqueda está vacía, devolver un array vacío
+    exit;
+}
+
+// Preparar la consulta para buscar clientes por nombre o correo
+$sql = "SELECT correo, nombre, contraseña, fecha FROM clientes WHERE nombre LIKE ? OR correo LIKE ?";
+$stmt = $conexion->prepare($sql);
+
+// Asegurarse de que la consulta funciona correctamente con LIKE y parámetros seguros
+$searchParam = "%" . $searchQuery . "%";
+$stmt->bind_param("ss", $searchParam, $searchParam);
+
+// Ejecutar la consulta
 $stmt->execute();
-
-// Obtener los resultados
 $result = $stmt->get_result();
-$clientes = [];
 
+$clientes = [];
 while ($row = $result->fetch_assoc()) {
-    $clientes[] = $row;
+    $clientes[] = $row;  // Llenar el array de resultados
 }
 
-// Devuelve los resultados como un JSON
+// Devolver los resultados en formato JSON
 echo json_encode($clientes);
-
-// Cierra la conexión
-$conn->close();
 ?>

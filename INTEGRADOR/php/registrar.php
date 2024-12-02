@@ -23,19 +23,28 @@ if (isset($_POST['Ingresar'])) {
         $contraseña = trim($_POST['contraseña']);
         $fecha = date('Y-m-d H:i:s'); // Obtener la fecha actual
 
-        // Hash de la contraseña para almacenarla de forma segura
-        $contrasena_hash = password_hash($contraseña, PASSWORD_DEFAULT);
+        // Comprobar si el correo ya existe en la base de datos
+        $consulta_check = "SELECT * FROM cliente WHERE correo = '$correo'";
+        $resultado_check = mysqli_query($conex, $consulta_check);
 
-        // Consulta SQL para insertar los datos
-        $consulta = "INSERT INTO cliente (correo, nombre_cli, contraseña, fecha) VALUES ('$correo', '$nombre_cli', '$contraseña', '$fecha')";
-        $resultado = mysqli_query($conex, $consulta);
-
-        // Comprobar si la inserción fue exitosa
-        if ($resultado) {
-            header("Location: ../html/cliente.html");
-            exit; // Detener el script para asegurar que la redirección se ejecute
+        if (mysqli_num_rows($resultado_check) > 0) {
+            // Si el correo ya existe, mostrar mensaje de error
+            $mensaje = '<h3 class="bad">¡Este correo ya está registrado!</h3>';
         } else {
-            $mensaje = '<h3 class="bad">¡Ups, ha ocurrido un error!</h3>'; // Mensaje de error
+            // Hash de la contraseña para almacenarla de forma segura
+            $contrasena_hash = password_hash($contraseña, PASSWORD_DEFAULT);
+
+            // Consulta SQL para insertar los datos
+            $consulta = "INSERT INTO cliente (correo, nombre_cli, contraseña, fecha) VALUES ('$correo', '$nombre_cli', '$contrasena_hash', '$fecha')";
+            $resultado = mysqli_query($conex, $consulta);
+
+            // Comprobar si la inserción fue exitosa
+            if ($resultado) {
+                header("Location: ../html/cliente.html");
+                exit; // Detener el script para asegurar que la redirección se ejecute
+            } else {
+                $mensaje = '<h3 class="bad">¡Ups, ha ocurrido un error!</h3>'; // Mensaje de error
+            }
         }
     }
 } else {
@@ -47,14 +56,7 @@ mysqli_close($conex);
 
 // Devolver el mensaje como respuesta
 echo $mensaje;
-?> 
-
-
-
-
-
-
-
+?>
 
 
 

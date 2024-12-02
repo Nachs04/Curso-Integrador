@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/portada-colaborador.css">
+    <title>Recuperar Contraseña - Panadería Doña Julia</title>
+</head>
+<body>
+    <div class="container">
+        <div class="recover-section">
+            <form action="http://localhost/INTEGRADOR/php/recuperar-contrasena.php" method="POST">
+                <h2>Recuperar Contraseña</h2>
+
+                <p>Por favor, ingresa tu correo electrónico para recuperar tu contraseña:</p>
+                <div class="usuario">
+                    <input type="email" name="email" placeholder="Correo" required>
+                </div>
+
+                <input type="submit" value="Recuperar Contraseña">
+
+                <div class="links">
+                    <a class="atras" href="../html/index.html">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

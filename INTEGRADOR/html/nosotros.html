@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Doña Julia Pastelería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="../CSS/cliente.css">
+
+    <style>
+        :root {
+            --color-primary: #9e7443;
+            --color-secondary: #FFC0CB;
+            --color-background: #ffefd8;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--color-background);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--color-primary);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg width="100" height="100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpattern id="pattern" patternUnits="userSpaceOnUse" width="50" height="50"%3E%3Cpath d="M25 0 L0 25 L25 50 L50 25 Z" fill="rgba(255,255,255,0.1)" /%3E%3C/pattern%3E%3Crect width="100%" height="100%" fill="url(%23pattern)" /%3E%3C/svg%3E');
+            opacity: 0.2;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 50px 0;
+            background-color: transparent;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: var(--color-primary);
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -40px;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -40px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+
+        .achievement {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement:hover {
+            background-color: rgb(255, 219, 154);
+            transform: translateY(-10px);
+        }
+
+        .achievement i {
+            font-size: 48px;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customar-support">
+                        <span class="text">Soporte al cliente</span><br>
+                        <span class="number">979-486-180</span>
+                    </div>
+                </div>
+                <div class="container-logo">
+                    <img src="../recursos/imagenes/LOGO.png">
+                    <h1 class="logo"><a href="index.html">PASTELERIA DOÑA JULIA</a></h1>
+                </div>
+                
+                <div class="container-user">
+                    <a href="login-cliente.html"><i class="fa-solid fa-user"></i></a>
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <div class="content-shopping-cart">
+                        <span class="text">Carrito</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+        <nav class="navbar container">
+            <i class="fa-solid fa-bars"></i>
+            <ul class="menu">
+                <li><a href="cliente.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <form class="search-form">
+                <input type="search" placeholder="Buscar">
+                <button class="btn-search">
+                    <i class="fa-brands fa-searchengin"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="section-title">MISIÓN</h2>
+        <p class="text-center" style="text-align: center; font-size: 13px;">Nuestra misión es ofrecer productos de pastelería de la más alta calidad, elaborados con amor<br> y dedicación,
+            para deleitar a nuestros clientes y hacer de cada celebración un momento especial.</p>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="section-title">VISIÓN</h2>
+        <p class="text-center" style="text-align: center; font-size: 13px;">Ser reconocidos como la mejor pastelería a nivel nacional, expandiendo nuestra <br>presencia y llevando la tradición
+             de Doña Julia a cada rincón del país y más allá.</p>
+    </section>
+
+    <section class="container my-5" >
+        <h2 class="section-title">NUESTRA HISTORIA</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>1985: INICIOS</h3>
+                <p>Todo comenzó en la cocina de nuestra fundadora, Doña Julia, con recetas familiares transmitidas por generaciones.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>1995: PRIMER LOCAL</h3>
+                <p>Abrimos nuestro primer local en el centro de la ciudad, ofreciendo postres tradicionales hechos con amor.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2005: EXPANSIÓN</h3>
+                <p>Comenzamos a expandirnos, abriendo nuevas sucursales y ganando reconocimiento por nuestra calidad.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2015: INNNOVACIÓN</h3>
+                <p>Introducimos nuevas recetas y técnicas modernas, manteniendo la esencia de nuestras tradiciones.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024: REALIDAD</h3>
+                <p>Y a dia de hoy seguir sirviendoles a ustedes por el gran cariño que nos tuvieron</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="section-title">NUESTRO EQUIPO</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="text-center mb-3">
+                        <img src="../recursos/imagenes/dJ.jfif" alt="Doña Julia" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+                    </div>
+                    <h3 class="text-center">Doña Julia</h3>
+                    <p class="text-center">FUNDADORA Y MAESTRA PASTELERA</p>
+                    <p style="text-align: center;">Con más de 40 años de experiencia, Doña Julia ha sido el corazón de nuestra pastelería, transmitiendo amor y pasión en cada receta.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="text-center mb-3">
+                        <img src="../recursos/imagenes/cf.jpg" alt="María González" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+                    </div>
+                    <h3 class="text-center">María González</h3>
+                    <p class="text-center">CHEF PRINCIPAL</p>
+                    <p style="text-align: center;">María es la mano derecha de Doña Julia, experta en crear diseños innovadores y sabores únicos.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="text-center mb-3">
+                        <img src="../recursos/imagenes/r.jpeg" alt="Carlos Ramírez" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+                    </div>
+                    <h3 class="text-center">Carlos Ramírez</h3>
+                    <p class="text-center">MAESTRO REPOSTERO</p>
+                    <p style="text-align: center;">Carlos es nuestro experto en decoración, transformando cada pastel en una obra de arte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="section-title">NUESTROS LOGROS</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="achievement">
+                    <i class="fas fa-trophy" style="color: red;"></i>
+                    <h3>Premios Regionales</h3>
+                    <p>Ganadores de 5 premios a la excelencia en repostería</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="achievement">
+                    <i class="fas fa-globe" style="color: red;"></i>
+                    <h3>Expansión Internacional</h3>
+                    <p>Presente en 3 países con más de 10 sucursales</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="achievement">
+                    <i class="fas fa-heart" style="color: red;" ></i>
+                    <h3>Satisfacción del Cliente</h3>
+                    <p>Más de 10,000 clientes felices cada año</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container my-5">
+        <h2 class="section-title">VALORES</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="p-4 bg-white rounded shadow">
+                    <i class="fas fa-hand-holding-heart text-primary mb-3" style="font-size: 48px;"></i>
+                    <h3>Pasión</h3>
+                    <p>Amor y dedicación en cada creación</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 bg-white rounded shadow">
+                    <i class="fas fa-leaf text-primary mb-3" style="font-size: 48px;"></i>
+                    <h3>Calidad</h3>
+                    <p>Ingredientes frescos y seleccionados</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="p-4 bg-white rounded shadow">
+                    <i class="fas fa-users text-primary mb-3" style="font-size: 48px;"></i>
+                    <h3>Tradición Familiar</h3>
+                    <p>Recetas transmitidas por generaciones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="section-title">ALGUNOS TESTIMONIOS DE CLIENTES</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="text-center mb-3">
+                        <img src="../recursos/imagenes/cli.png" alt="Cliente 1" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                    <h3 class="text-center">Ana López</h3>
+                    <p class="text-center">"Los pasteles de Doña Julia son simplemente los mejores. ¡Siempre sorprenden en mis fiestas!"</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="text-center mb-3">
+                        <img src="../recursos/imagenes/cli.png" alt="Cliente 2" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                    <h3 class="text-center">Javier Martínez</h3>
+                    <p class="text-center">"La atención es excepcional y los sabores son inolvidables. ¡Recomiendo Doña Julia a todos!"</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="text-center mb-3">
+                        <img src="../recursos/imagenes/cli.png" alt="Cliente 3" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                    </div>
+                    <h3 class="text-center">Lucía Fernández</h3>
+                    <p class="text-center">"Cada vez que pruebo algo nuevo, me enamoro más. ¡Gracias Doña Julia!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="container-logo">
+                    <img src="../recursos/imagenes/LOGO.png">
+                    <h1 class="logo"><a href="index.html">PASTELERIA DOÑA JULIA</a></h1>
+                </div>
+                <div class="contact-info">
+                    <p class="title-footer">Informacion de contacto</p>
+                    <ul>
+                        <li>Dirección: Av.Arequipa-Lima Centro, Perú</li>
+                        <li>Telefono: 979-486-180</li>
+                        <li>Correo electronico: utepinos@gmail.com</li>
+                    </ul>
+                    <div class="social-icons">
+                        <span class="facebook"><i class="fa-brands fa-facebook"></i></span>
+                        <span class="instagram"><i class="fa-brands fa-instagram"></i></span>
+                        <span class="twitter"><i class="fa-brands fa-x-twitter"></i></span>
+                        <span class="youtube"><i class="fa-brands fa-youtube"></i></span>
+                        <span class="tiktok"><i class="fa-brands fa-tiktok"></i></span>
+                    </div>
+                </div>
+                <div class="information">
+                    <p class="title-footer">Información</p>
+                        <ul>
+                            <li><a href="#"></a>Acerca de nosotros</li>
+                            <li><a href="#"></a>Informacion</li>
+                            <li><a href="#"></a>Politicas de privacidad</li>
+                            <li><a href="#"></a>Terminos y condiciones</li>
+                            <li><a href="#"></a>Contactanos </li>
+                        </ul>
+                </div>
+                <div class="newletter">
+                    <p class="title-footer">NUESTRAS PROMOCIONES</p>
+                    <div class="content">
+                        <p>
+                            Enterate a nuestros proximas promociones donde te mantendremos al 
+                            día con todas nuestras ofertas exclusivas.
+                        </p>
+                        <input type="email" placeholder="Ingresa tu correo aqui mano...">
+                        <button>INGRESA</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>
+                    Nicolas Chumpitaz Yael Ramos Jhair Dedios &copy; 2024
+                </p>
+                <img src="../recursos/imagenes/payment.png" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+<div class="whatsapp-container">
+    <div class="whatsapp-button">
+        <a href="https://wa.me/1234567890" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
